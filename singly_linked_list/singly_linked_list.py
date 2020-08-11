@@ -1,5 +1,5 @@
 class Node:
-    def __init_-(self, value, next_node=None):
+    def __init_(self, value, next_node=None):
         #the value that the node is holding
         self.value = value #reference to the next node in the linked list
         self.next_node = next_node
@@ -9,7 +9,7 @@ class Node:
         return self.value
     
     #method to get the node's 'next_node'
-    def get_next(sefl):
+    def get_next(self):
         return self.next_node
     
     #method to update the node's 'next_ode' to the input node
@@ -21,7 +21,7 @@ class LinkedList:
         self.head = None
         self.tail = None
     
-    def add_t-_tail(self, value):
+    def add_to_tail(self, value):
         #wrap the value in a Node
         new_node= Node(value)
         #check if the Linked List is empty
@@ -46,7 +46,7 @@ class LinkedList:
             return val
 
         #otherwise the linked list has more than one node
-        else:
+        else: 
             #we need to set 'self.tail' to the seond-to-last node in another variable so we can return it
             val = self.tail.get_value()
             #we need to set 'self.tail' to the second-to-lst Node
@@ -75,13 +75,18 @@ class LinkedList:
         if self.head == self.tail:
             val= self.head.get_value()
             self.head = None
-            self.tail = None
+            self.tail.set_next(None) 
             return val
         else:
         # store the old head's value that we need to return
-        val = self. 
+            val = self.head.get_value() 
         # set 'self.head' to the old head's 'next_node'
+            self.head = self.head.get_next()
         #return the old_head's value
+        return val
+    def contains(self, value):
+        if not self.head:
+            return False
 
 # ll = Node(5)
 # ll.set_next(Node(7))
