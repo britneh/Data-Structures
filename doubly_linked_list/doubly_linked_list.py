@@ -128,6 +128,9 @@ class DoublyLinkedList:
   
         # Make the last node as the first Node 
         node.next = self.head 
+        #add to logic
+        # node.next.prev = node.prev
+        # node.prev.next = node.next
         self.head = node 
        
         
@@ -179,6 +182,7 @@ class DoublyLinkedList:
             node.delete()
             #don't forget to decrement the length
         self.length -= 1
+        #next.prev and prev.next logic missing
 
     """
     Finds and returns the maximum value of all the nodes 
