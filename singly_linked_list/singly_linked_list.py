@@ -1,5 +1,5 @@
 class Node:
-    def __init_(self, value, next_node=None):
+    def __init__(self, value, next_node=None):
         #the value that the node is holding
         self.value = value #reference to the next node in the linked list
         self.next_node = next_node
@@ -23,11 +23,11 @@ class LinkedList:
     
     def add_to_tail(self, value):
         #wrap the value in a Node
-        new_node= Node(value)
+        new_node = Node(value)
         #check if the Linked List is empty
         if self.head is None and self.tail is None:
             #set head and tail to the new node
-            self.head - new_node
+            self.head = new_node
             self.tail = new_node
         #otherwise, the list has at least one node
         else:
@@ -37,6 +37,8 @@ class LinkedList:
             self.tail = new_node
 
     def remove_tail(self):
+        if self.head is None and self.tail is None:
+            return None
         #check if the linked list has only one node
         if self.head == self.tail:
             #store the node we're going to remove's value
@@ -75,7 +77,7 @@ class LinkedList:
         if self.head == self.tail:
             val= self.head.get_value()
             self.head = None
-            self.tail.set_next(None) 
+            self.tail = None
             return val
         else:
         # store the old head's value that we need to return
